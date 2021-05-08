@@ -158,4 +158,19 @@ for(let ind=0; ind<hours.length;ind++){
   final.textContent=total2
 
   }
-  
+
+  let storeform=document.getElementById('storeform');
+  storeform.addEventListener('submit', addStore);
+   function addStore(event) {
+    event.preventDefault();
+
+let storeName=event.target.storeName.value;
+let Min=event.target.MinNumber.value;
+let Max=event.target.MaxNumber.value;
+let Avg=event.target.AvgNumber.value;
+
+let newStore=new Store(storeName , Min,Max,Avg)
+newStore.randomCustNumber();
+newStore.salesCookies();
+newStore.render(); 
+   }
