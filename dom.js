@@ -115,6 +115,22 @@ th2.textContent=hours[i];
 }
 }
   
+let storeform=document.getElementById('storeform');
+  storeform.addEventListener('submit', addStore);
+   function addStore(event) {
+    event.preventDefault();
+
+let storeName=event.target.storeName.value;
+let Min=event.target.MinNumber.value;
+let Max=event.target.MaxNumber.value;
+let Avg=event.target.AvgNumber.value;
+
+let newStore=new Store(storeName , Min,Max,Avg)
+newStore.randomCustNumber();
+newStore.salesCookies();
+
+newStore.render(); 
+   }
 // for(let ind=0; ind<stores.length;ind++){
 //   let random=document.createElement('td');
 //   nametd.appendChild(random);
@@ -142,6 +158,7 @@ Lima.randomCustNumber();
 Lima.salesCookies();
 Lima.render();
 
+
 let total=document.createElement('tr');
 table.appendChild(total);
 let nametd=document.createElement('td');
@@ -163,24 +180,22 @@ for(let ind=0; ind<hours.length;ind++){
 
   
 
-  let storeform=document.getElementById('storeform');
-  storeform.addEventListener('submit', addStore);
-   function addStore(event) {
-    event.preventDefault();
+//   let storeform=document.getElementById('storeform');
+//   storeform.addEventListener('submit', addStore);
+//    function addStore(event) {
+//     event.preventDefault();
 
-let storeName=event.target.storeName.value;
-let Min=event.target.MinNumber.value;
-let Max=event.target.MaxNumber.value;
-let Avg=event.target.AvgNumber.value;
+// let storeName=event.target.storeName.value;
+// let Min=event.target.MinNumber.value;
+// let Max=event.target.MaxNumber.value;
+// let Avg=event.target.AvgNumber.value;
 
-let newStore=new Store(storeName , Min,Max,Avg)
-newStore.randomCustNumber();
-newStore.salesCookies();
+// let newStore=new Store(storeName , Min,Max,Avg)
+// newStore.randomCustNumber();
+// newStore.salesCookies();
 
-newStore.render(); 
-   }
-
-newStore.render();
+// newStore.render(); 
+//    }
 // console.log(newStore);
-  }
+  
 
